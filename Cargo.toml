@@ -1,0 +1,53 @@
+[package]
+name = "mailroom"
+version = "0.1.0"
+edition = "2024"
+authors = ["Luca Iachini <luca.iachini89@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/luca-iachini/mailroom"
+homepage = "https://github.com/luca-iachini/mailroom"
+description = "Async outbox for reliable message delivery in distributed microservices"
+categories = ["asynchronous", "distributed", "messaging", "network-programming"]
+keywords = ["outbox", "event-sourcing", "microservice", "distributed", "event-driven"]
+
+[features]
+sqlx = ["dep:sqlx"]
+rabbitmq = ["dep:lapin"]
+kafka = ["dep:rdkafka"]
+cloud-events = ["dep:chrono"]
+
+[dependencies]
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+chrono = { version = "0.4.42", features = ["serde"], optional = true }
+serde = "1.0.219"
+serde_json = "1.0.140"
+tokio = { version = "1.45.1", features = ["macros","rt-multi-thread", "signal", "time", "sync"] }
+tracing = "0.1.41"
+tracing-error = "0.2.1"
+sqlx = { version = "0.8.6", features = ["runtime-tokio-rustls", "postgres", "json"], optional = true }
+tower = { version = "0.5.2", features = ["timeout"] }
+async-trait = "0.1.89"
+tokio-stream = { version = "0.1.17" }
+dotenv = "0.15.0"
+lapin = { version = "3.7.2", optional = true }
+async-stream = { version = "0.3.6" }
+futures-core = "0.3.31"
+tokio-util = "0.7.17"
+ahash = "0.8.12"
+rdkafka = { version = "0.38.0", optional = true }
+
+[dev-dependencies]
+teststack = { version = "0.1", features = ["postgres"] }
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[package.metadata.playground]
+features = ["full"]
+
+[[example]]
+name = "database"
+path = "examples/database.rs"
+required-features = ["sqlx"]
