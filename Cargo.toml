@@ -21,7 +21,7 @@ cloud-events = ["dep:chrono"]
 tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
 chrono = { version = "0.4.42", features = ["serde"], optional = true }
 serde = "1.0.219"
-serde_json = "1.0.140"
+serde_json = "1.0.143"
 tokio = { version = "1.45.1", features = ["macros","rt-multi-thread", "signal", "time", "sync"] }
 tracing = "0.1.41"
 tracing-error = "0.2.1"
