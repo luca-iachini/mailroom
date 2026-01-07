@@ -28,7 +28,7 @@ tracing-error = "0.2.1"
 sqlx = { version = "0.8.6", features = ["runtime-tokio-rustls", "postgres", "json"], optional = true }
 tower = { version = "0.5.2", features = ["timeout"] }
 async-trait = "0.1.89"
-tokio-stream = { version = "0.1.17" }
+tokio-stream = { version = "0.1.18" }
 dotenv = "0.15.0"
 lapin = { version = "3.7.2", optional = true }
 async-stream = { version = "0.3.6" }
