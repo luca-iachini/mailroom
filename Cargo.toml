@@ -26,7 +26,7 @@ tokio = { version = "1.45.1", features = ["macros","rt-multi-thread", "signal", 
 tracing = "0.1.41"
 tracing-error = "0.2.1"
 sqlx = { version = "0.8.6", features = ["runtime-tokio-rustls", "postgres", "json"], optional = true }
-tower = { version = "0.5.2", features = ["timeout"] }
+tower = { version = "0.5.3", features = ["timeout"] }
 async-trait = "0.1.89"
 tokio-stream = { version = "0.1.17" }
 dotenv = "0.15.0"
